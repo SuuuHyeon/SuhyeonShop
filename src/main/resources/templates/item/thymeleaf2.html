@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>타임리프 연습2</title>
+</head>
+<body>
+    <h1>Thymeleaf 매개변수 전달 연습</h1>
+    <div>
+        이름 : <span th:text="${itemDataDto.getName()}"></span>
+    </div>
+    <div>
+        나이 : <span th:text="${itemDataDto.getAge()}"></span>
+    </div>
+</body>
+</html>

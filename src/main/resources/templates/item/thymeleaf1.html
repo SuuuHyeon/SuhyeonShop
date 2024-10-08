@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>타임리프 연습1</title>
+</head>
+<body>
+    <h1>타임리프 연습1</h1>
+    <div>
+        상품명 : <span th:text="${itemDto.getItemNm()}">ABCdxfd</span>
+    </div>
+    <div>
+        상품 상세 설명 : <span th:text="${itemDto.getItemDetail()}">ABCdxfd</span>
+    </div>
+    <div>
+        가격 : <span th:text="${itemDto.getPrice()}">ABCdxfd</span>
+    </div>
+    <div>
+        재고 수량 : <span th:text="${itemDto.getStockNumber()}">ABCdxfd</span>
+    </div>
+    <div>
+<!--        <a href="/item/thymeleaf2?name=홍길동">thymeleaf2 이동</a>-->
+        <a th:href="@{/item/thymeleaf2(name='김수현', age=25)}">thymeleaf2 이동</a>
+    </div>
+</body>
+</html>

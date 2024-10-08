@@ -1,0 +1,43 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: SuhyeonShop
+  devtools:
+    livereload:
+      enabled: true # 화면 갱신
+    restart:
+      enabled: true # 재시작
+  thymeleaf:
+    cache: false # 캐시 없음
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Spring_B
+    username: root
+    password: 12341234
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+  security:
+    user:
+      name: test
+      password: 1234
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          description:
+            sql: trace
