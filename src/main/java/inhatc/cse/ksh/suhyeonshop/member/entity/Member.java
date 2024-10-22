@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
 public class Member {
 
     @Id
@@ -34,7 +35,7 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public Member createMember(MemberDto memberDto, PasswordEncoder passwordEncoder) {
+    public static Member createMember(MemberDto memberDto, PasswordEncoder passwordEncoder) {
         Member member = Member.builder()
                 .name(memberDto.getName())
                 .email(memberDto.getEmail())

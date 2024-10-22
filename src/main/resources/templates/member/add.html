@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+    <div layout:fragment="content">
+        <h1>회원 등록</h1>
+        <form action="/member/add" role="form" method="post" th:object="${memberDto}">
+            <div class="mb-3">
+                <label for="name" class="form-label">이름</label>
+                <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="이름을 입력해주세요." aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">이메일</label>
+                <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="이메일을 입력해주세요." aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">비밀번호</label>
+                <input type="password" class="form-control" th:field="*{password}" placeholder="비밀번호를 입력해주세요." id="password">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">주소</label>
+                <input type="text" class="form-control" id="address" th:field="*{address}" placeholder="주소를 입력해주세요.">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+</html>
