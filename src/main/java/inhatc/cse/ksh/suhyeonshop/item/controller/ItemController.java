@@ -13,6 +13,28 @@ import java.util.List;
 @Controller
 public class ItemController {
 
+    @GetMapping("/admin/item/add")
+    public String itemAdd() {
+        return "item/add";
+    }
+
+    @GetMapping("/admin/items")
+    public String itemList() {
+        return "item/list";
+    }
+
+
+    @GetMapping("/cart")
+    public String cart() {
+        return "cart/list";
+    }
+
+    @GetMapping("/orders")
+    public String orders() {
+        return "order/list";
+    }
+
+
     @GetMapping("/item/thymeleaf1")
     public String thymeleaf1(Model model) {
         ItemDto itemDto = ItemDto.builder()
