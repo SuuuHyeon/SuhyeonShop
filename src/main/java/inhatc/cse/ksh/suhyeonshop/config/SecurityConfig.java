@@ -29,9 +29,14 @@ public class SecurityConfig {
         http.authorizeHttpRequests(request ->request
                 .requestMatchers("/css/**").permitAll() // 스타일 코드도 등록 해줘야함
                 .requestMatchers("/", "/member/**").permitAll()
+                .requestMatchers("/admin/**").hasRole("ADMIN") // role로 설정하면 ROLE_ 안붙여도됨. authorized로 설정하면 붙여야함
                 .anyRequest().authenticated()
         );
         http.logout(Customizer.withDefaults());
+
+        http.exceptionHandling(
+                exception -> exception.authenticationEntryPoint(new CustomAuthenticationEntryPoint()));
+
 //        http.csrf(AbstractHttpConfigurer::disable);
 //        http.formLogin(Customizer.withDefaults()); //
 
