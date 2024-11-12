@@ -1,5 +1,6 @@
 package inhatc.cse.ksh.suhyeonshop.item.entity;
 
+import inhatc.cse.ksh.suhyeonshop.common.entity.BaseEntity;
 import inhatc.cse.ksh.suhyeonshop.item.constant.ItemSellStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,7 +13,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Item {
+public class Item extends BaseEntity {
     @Id // primary key 설정
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 자동증가
     @Column(name = "item_id")

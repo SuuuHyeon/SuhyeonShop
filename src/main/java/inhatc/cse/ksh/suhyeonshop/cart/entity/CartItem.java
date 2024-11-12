@@ -1,5 +1,6 @@
 package inhatc.cse.ksh.suhyeonshop.cart.entity;
 
+import inhatc.cse.ksh.suhyeonshop.common.entity.BaseEntity;
 import inhatc.cse.ksh.suhyeonshop.item.entity.Item;
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,7 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Builder
-public class CartItem {
+public class CartItem extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

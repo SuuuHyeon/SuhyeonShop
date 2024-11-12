@@ -1,5 +1,6 @@
 package inhatc.cse.ksh.suhyeonshop.order.entity;
 
+import inhatc.cse.ksh.suhyeonshop.common.entity.BaseEntity;
 import inhatc.cse.ksh.suhyeonshop.item.entity.Item;
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OrderItem {
+public class OrderItem extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
